@@ -14,6 +14,7 @@
             font-family: Arial, sans-serif;
         }
 
+
         .container 
         {
             background-color: #ffffff;
@@ -23,16 +24,19 @@
             max-width: 400px;
         }
 
+
         h2 {
             font-weight: bold;
             margin-bottom: 16px;
             text-align: center;
         }
 
+
         form {
             display: flex;
             flex-direction: column;
         }
+
 
         label {
             font-size: 0.875rem;
@@ -40,6 +44,7 @@
             color: #718096;
             margin-bottom: 4px;
         }
+
 
         input {
             padding: 8px 12px;
@@ -51,10 +56,12 @@
             transition: border-color 0.3s;
         }
 
+
         input:focus {
             border-color: #055c68;
             box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
         }
+
 
         button {
             background-color: #055c68;
@@ -73,10 +80,12 @@
             margin-top: 16px;
         }
 
+
         p a {
             color: #4299e1;
             text-decoration: none;
         }
+
 
         p a:hover {
             text-decoration: underline;
@@ -86,30 +95,42 @@
 <body>
     <div class="container">
         <h2>Sign Up</h2>
-        <form action="./sign_db.php" method="post">
+        <form action="./post_registration.php" method="post">
+
 
             <div>
                 <label for="firstname">First name</label>
                 <input type="text" id="firstname" name="firstname" required>
             </div>
 
+
             <div>
                 <label for="lastname">Last name</label>
                 <input type="text" id="lastname" name="lastname" required >
             </div>
+
 
             <div>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
 
+
+            <div>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+
             <div>
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
 
+
             <button type="submit">Sign Up</button>
         </form>
+
 
         <p>Already have an account? <a href="#">Log in</a></p>
     </div>
