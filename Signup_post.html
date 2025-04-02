@@ -1,138 +1,616 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-   
-    <title>Signup Page</title>
+    <title>dresses options</title>
     <style>
-        body {
-            background-color: #ffe1df;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-
-        .container 
+        body
         {
-            background-color: #ffffff;
-            border-radius: 20px;
-            padding: 24px;
-            width: 100%;
-            max-width: 400px;
+            padding-top: 150px;
+            background-color:  #EBE8DB;
         }
+        header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+}
 
-
-        h2 {
-            font-weight: bold;
-            margin-bottom: 16px;
-            text-align: center;
+        .desc
+        {
+            display:inline-block;
         }
-
-
-        form {
-            display: flex;
-            flex-direction: column;
+        .options
+        {
+            display:inline-block;
+            margin-left: 50px;
+            height: 120x;
+            width: 300px;
+            margin-top: 30px;
         }
-
-
-        label {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #718096;
-            margin-bottom: 4px;
+        .imag
+        {
+            height: 100x;
+            width: 50px;
         }
-
-
-        input {
-            padding: 8px 12px;
-            border: 1px solid #cbd5e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            margin-bottom: 16px;
-            outline: none;
-            transition: border-color 0.3s;
+        .dress_imag
+        {
+            height: 400px;
+            box-shadow: 10px 10px 10px rgba(202, 180, 180, 0.5);
         }
-
-
-        input:focus {
-            border-color: #055c68;
-            box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
-        }
-
-
-        button {
-            background-color: #055c68;
-            color: #ffffff;
-            padding: 10px 16px;
+        .butt
+        {
+            background-color: #e53d5e;
+            width:150px;
+            color: aliceblue;
             border: none;
-            border-radius: 8px;
-            font-size: 1rem;
+            margin-right: 40px;
         }
-
-
-        p {
-            text-align: center;
-            font-size: 15px;
-            color: #718096;
-            margin-top: 16px;
-        }
-
-
-        p a {
-            color: #4299e1;
-            text-decoration: none;
-        }
-
-
-        p a:hover {
-            text-decoration: underline;
+        .quant
+        {
+            width: 20px;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h2>Sign Up</h2>
-        <form action="./post_registration.php" method="post">
+<header>
+    <div style="background-color: #B03052">
+        
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1400px; margin: 0 auto; padding: 15px 30px;background-color:#D76C82; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-bottom: 5px solid #f8cfcf;">
+
+            
+            <a href="homepage.html" style="cursor: pointer;">
+                <img src="MVM.png" alt="MVM Logo" width="120" height="120" style="margin-left: 15px;">
+            </a>
+
+            <form style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;" 
+            method="POST" action="upload.php" enctype="multipart/form-data">
+    
+                <div style="position: relative; display: inline-block;">
+                    <input type="text" id="search-bar" placeholder="Search here..." 
+                        style="width: 450px; height: 40px; padding: 5px 40px 5px 15px; font-size: 16px; border: 1px solid #aaa; border-radius: 8px;">
+                    <img src="./search_icon.png" 
+                        alt="Search" 
+                        style="width: 20px; height: 20px; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                </div>
+    
+    
+                <label for="fileupload" 
+                    style="display: flex; align-items: center; gap: 8px; background-color: #b5d6f8; color: rgb(0, 0, 0); 
+                        padding: 10px 15px; border-radius: 8px; cursor: pointer; font-size: 16px;">
+                    Search by image
+                </label>
+                <input type="file" id="fileupload" name="fileupload" accept="image/*" style="display: none;">
+    
+            </form>
 
 
-            <div>
-                <label for="firstname">First name</label>
-                <input type="text" id="firstname" name="firstname" required>
+            
+        
+            <div style="display: flex; align-items: center; gap: 20px; margin-right: 30px;">
+                <a href="wishlist.html" style="background: none; border: none; cursor: pointer;">
+                    <img src="wishl_icon.png" alt="Wishlist" width="45" height="45">
+                </a>
+                <button style="background: none; border: none; cursor: pointer;">
+                    <img src="cart_icon.png" alt="Cart" width="45" height="45">
+                </button>
+                <button style="background: none; border: none; cursor: pointer;">
+                    <img src="profile_icon.png" alt="Profile" width="45" height="45">
+                </button>
             </div>
-
-
-            <div>
-                <label for="lastname">Last name</label>
-                <input type="text" id="lastname" name="lastname" required >
-            </div>
-
-
-            <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-
-            <div>
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" required>
-            </div>
-
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-
-
-            <button type="submit">Sign Up</button>
-        </form>
-
-
-        <p>Already have an account? <a href="#">Log in</a></p>
+        
+        </div>  
+        
     </div>
+</header>
+
+
+<body>
+    
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="white_suit_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="butt">ADD</button>
+                <input type="number" value="0" min="0" style="width:30px">
+                <button>
+                    <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+                </button>
+            </div>
+
+    </div>
+
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="suit_w.png">
+        </div>
+        <div class="desc">
+            <p>Formal Suit</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹2900</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="pink_suit_w.png">
+        </div>
+        <div class="desc">
+            <p>Pink kurta set</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹3200</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="green_festive_wear_w.png">
+        </div>
+        <div class="desc">
+            <p>Green festive wear</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹8300</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="red_frock_w.png">
+        </div>
+        <div class="desc">
+            <p>Red frock</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹700</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="green_dress_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="yellow_frock_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="lilac_top_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹1000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="brown_top_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="light_pink_tshirt_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹1500</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="pink_shirt_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="green_shirt_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="floral_beige_top_w.png">
+        </div>
+        <div class="desc">
+            <p>Beige Top</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="blue_cargo_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="purple_cargo_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="brown_trousers_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="denim_jack_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>    
+    
+    
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="jeans_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>    
+    
+    
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="brown_cargo_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹1500</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>    
+    
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="yellow_jumpsuit_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>    
+    
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="pink_jumpsuit_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>    
+    
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="black_hoodie_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button>
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+
+    </div>    
+    
+    <div class="options">
+        <div class="imag">
+            <img class="dress_imag" src="maroon_jacket_w.png">
+        </div>
+        <div class="desc">
+            <p>Suit for woman</p>
+        </div>
+        <div class="desc">
+            <p>&nbsp;&nbsp;&nbsp;Price: ₹5000</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="butt">ADD</button>
+            <input type="number" value="0" min="0" style="width:30px">
+            <button style="background: none; border: none; cursor: pointer;">
+                <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+            </button>
+        </div>
+        </div>
+
+        <div class="options"> 
+            <div class="imag">
+                <img class="dress_imag" src="suit_w.png">
+            </div>
+            <div class="desc">
+                <p>Formal Suit</p>
+            </div>
+            <div class="desc">
+                <p>&nbsp;&nbsp;&nbsp;Price: ₹2900</p>
+            </div>
+    
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="butt">ADD</button>
+                <input type="number" value="0" min="0" style="width:30px">
+                <button style="background: none; border: none; cursor: pointer;">
+                    <img src="wishl_icon.png" alt="Wishlist" width="30" height="30">
+                </button>
+            </div>
+    
+        </div>
+
+    
+    
+
 </body>
 </html>
